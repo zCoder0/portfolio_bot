@@ -24,7 +24,7 @@ def get_conversational_chain(model_name):
     try:
         prompt_template = """  
             Hello! 😊 Let's get straight to your question.  
-
+            - Explore greetings.
             - I will answer **clearly and concisely** using only the provided context.  
             - If the answer is in the context, **I'll respond directly** in a **point format**.  
             - If the answer is **not available**, I'll say:  
