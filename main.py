@@ -14,6 +14,9 @@ from src.components.model import user_input
 import json
 from fastapi.middleware.cors import CORSMiddleware
 
+
+app = FastAPI()
+path ='faiss-lib'
 # Allow frontend requests (localhost during development)
 app.add_middleware(
     CORSMiddleware,
@@ -22,9 +25,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-app = FastAPI()
-path ='faiss-lib'
-
 class ChatRequest(BaseModel):
     question: str
 
