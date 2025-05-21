@@ -15,9 +15,6 @@ import json
 
 
 app = FastAPI()
-
-app.mount("/static",StaticFiles(directory='static') ,name='static')
-
 path ='faiss-lib'
 
 class ChatRequest(BaseModel):
@@ -44,11 +41,6 @@ except Exception as e:
     print("loading..")
     load()
     
-
-
-@app.get("/")
-def read_root():
-    return FileResponse("static/index.html")
 
 @app.post("/chat")
 async def chatWithMe(data: ChatRequest):
