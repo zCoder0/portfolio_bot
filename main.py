@@ -12,8 +12,16 @@ from pydantic import BaseModel
 
 from src.components.model import user_input
 import json
+from fastapi.middleware.cors import CORSMiddleware
 
-
+# Allow frontend requests (localhost during development)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # You can restrict this to ["http://127.0.0.1:5500"] for security
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 app = FastAPI()
 path ='faiss-lib'
 
